@@ -53,7 +53,13 @@ class WebSecurityConfiguration(
                 withUser(
                     User.withUsername("admin")
                         .password(encoder.encode("admin"))
-                        .roles("ADMIN", "ACTUATOR")
+                        .roles("ADMIN")
+                        .build()
+                )
+                withUser(
+                    User.withUsername("actuator")
+                        .password(encoder.encode("actuator"))
+                        .roles("ACTUATOR")
                         .build()
                 )
             }
